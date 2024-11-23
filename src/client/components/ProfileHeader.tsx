@@ -1,6 +1,6 @@
 import { Mail, Download, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
-
+//minhthuan
 export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
   return (
     <motion.div
