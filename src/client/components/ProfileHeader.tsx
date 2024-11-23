@@ -1,4 +1,4 @@
-import { Mail, Download, Github, Linkedin } from "lucide-react";
+import { Mail, Download, Github, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
 //minhthuan
 export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
@@ -164,7 +164,8 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                 <motion.a
                   whileHover={{ scale: 1.2, rotate: 360 }}
                   transition={{ duration: 0.3 }}
-                  href="#"
+                  href="https://github.com/minhthuan1809"
+                  target="_blank"
                   className={`p-2 rounded-full 
                   ${
                     isDarkMode
@@ -178,7 +179,8 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                 <motion.a
                   whileHover={{ scale: 1.2, rotate: 360 }}
                   transition={{ duration: 0.3 }}
-                  href="#"
+                  href="https://www.facebook.com/minhthuan1809"
+                  target="_blank"
                   className={`p-2 rounded-full
                   ${
                     isDarkMode
@@ -187,7 +189,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                   }
                   transition-colors duration-300`}
                 >
-                  <Linkedin size={24} />
+                  <Facebook size={24} />
                 </motion.a>
               </motion.div>
             </div>
