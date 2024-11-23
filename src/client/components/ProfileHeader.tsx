@@ -7,21 +7,21 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={`min-h-screen flex items-center justify-center ${
+      className={`min-h-screen flex items-center justify-center pt-16 md:pt-20 ${
         isDarkMode
           ? "bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-gray-100"
           : "bg-gradient-to-b from-blue-50 to-white text-gray-900"
       } transition-colors duration-300`}
     >
       <div className="max-w-7xl mx-auto px-4 py-12 b">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-12">
           {/* Profile Image with Enhanced Animation */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
             whileHover={{ scale: 1.05 }}
-            className={`relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden 
+            className={`relative w-52 h-52 md:w-80 md:h-80 rounded-full overflow-hidden 
             ${isDarkMode ? "ring-blue-400" : "ring-blue-500"} 
             ring-4 ring-offset-4 
             ${isDarkMode ? "ring-offset-gray-900" : "ring-offset-white"}
@@ -51,7 +51,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className={`text-4xl md:text-5xl font-bold tracking-tight p-4
+                className={`text-3xl md:text-5xl font-bold tracking-tight p-4
                 ${
                   isDarkMode
                     ? "bg-gradient-to-r from-blue-400 to-purple-400"
@@ -67,7 +67,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className={`text-xl md:text-2xl font-semibold
+                className={`text-lg md:text-2xl font-semibold
                 ${isDarkMode ? "text-blue-300" : "text-blue-600"}
                 transition-colors duration-300`}
               >
@@ -198,7 +198,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="absolute bottom-20 right-[50%] animate-bounce  "
+            className="absolute bottom-20 right-[50%] animate-bounce hi "
           >
             <div className="border-blue-500 border-2 rounded-full p-2">
               <ArrowDown size={30} className="text-blue-500" />
