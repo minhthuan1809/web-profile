@@ -1,6 +1,6 @@
 import { FormControlLabel } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { FormGroup, Typography, Switch } from "@mui/material";
+import { FormGroup, Switch } from "@mui/material";
 
 export default function BtnDarkmode({
   isDarkMode,
