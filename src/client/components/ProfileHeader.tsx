@@ -198,7 +198,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.9 }}
-            className="absolute bottom-20 right-[50%] animate-bounce hi "
+            className="absolute bottom-20 right-[50%] animate-bounce   hidden md:block"
           >
             <div className="border-blue-500 border-2 rounded-full p-2">
               <ArrowDown size={30} className="text-blue-500" />
