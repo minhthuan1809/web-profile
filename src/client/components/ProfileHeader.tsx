@@ -1,4 +1,3 @@
-import React from "react";
 import { Mail, Download, Github, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 
