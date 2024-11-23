@@ -1,4 +1,4 @@
-import { Mail, Download, Github, Facebook } from "lucide-react";
+import { Mail, Download, Github, Facebook, ArrowDown } from "lucide-react";
 import { motion } from "framer-motion";
 //minhthuan
 export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
@@ -13,7 +13,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
           : "bg-gradient-to-b from-blue-50 to-white text-gray-900"
       } transition-colors duration-300`}
     >
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-7xl mx-auto px-4 py-12 b">
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
           {/* Profile Image with Enhanced Animation */}
           <motion.div
@@ -192,6 +192,16 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                   <Facebook size={24} />
                 </motion.a>
               </motion.div>
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="absolute bottom-20 right-[50%] animate-bounce  "
+          >
+            <div className="border-blue-500 border-2 rounded-full p-2">
+              <ArrowDown size={30} className="text-blue-500" />
             </div>
           </motion.div>
         </div>
