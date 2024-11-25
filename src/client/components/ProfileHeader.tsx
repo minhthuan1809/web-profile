@@ -16,9 +16,9 @@ type HeaderData = {
 };
 
 // Icon mapping cho social links
-const SocialIcon = ({ platform }: { platform: string }) => {
+const SocialIcon = ({ platform, size }: { platform: string; size: number }) => {
   const IconComponent = (Lucide as any)[platform];
-  return IconComponent ? <IconComponent /> : null;
+  return IconComponent ? <IconComponent size={size} /> : null;
 };
 
 export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
