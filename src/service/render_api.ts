@@ -9,3 +9,9 @@ export async function renderHeader() {
   const data = await res.json();
   return data;
 }
+
+export async function renderBiography() {
+  const res = await fetch(`${import.meta.env.VITE_API}/introduce`);
+  const data = await res.json();
+  return data;
+}

@@ -8,7 +8,7 @@ type HeaderData = {
   title: string;
   description: string;
   skills: string[];
-
+  img: string;
   socialLinks: {
     platform: string;
     url: string;
@@ -16,9 +16,9 @@ type HeaderData = {
 };
 
 // Icon mapping cho social links
-const SocialIcon = ({ platform, size }: { platform: string; size: number }) => {
+const SocialIcon = ({ platform }: { platform: string }) => {
   const IconComponent = (Lucide as any)[platform];
-  return IconComponent ? <IconComponent size={size} /> : null;
+  return IconComponent ? <IconComponent /> : null;
 };
 
 export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
@@ -80,7 +80,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
               initial={{ scale: 1.2 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              src="https://scontent-hkg1-1.xx.fbcdn.net/v/t39.30808-1/425504626_1677896819407548_3902130220591766840_n.jpg?stp=dst-jpg_s200x200&_nc_cat=101&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=v60bsi1ypBgAX8kNvgE&_nc_zt=24&_nc_ht=scontent-hkg1-1.xx&_nc_gid=AknPSN0IINoPyJePR4NmKOr&oh=00_AfBf2d8XX7SGFeCW9Cev8Oig_CBME3y_bdcnQSHlZEdkKQ&oe=67478328"
+              src={data?.img}
               alt="Profile"
               className="w-full h-full object-cover transition-all duration-300"
             />
