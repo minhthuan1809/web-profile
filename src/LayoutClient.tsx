@@ -5,6 +5,7 @@ import ProfileHeader from "./client/components/ProfileHeader";
 import Biography from "./client/components/Biography";
 import Skill from "./client/components/Skill";
 import Featured from "./client/components/Featured";
+import Footer from "./client/common/Footer";
 export default function LayoutClient() {
   const systemPrefersDark = useMediaQuery("(prefers-color-scheme: dark)");
   const [isDarkMode, setIsDarkMode] = useState(
@@ -23,6 +24,7 @@ export default function LayoutClient() {
       <Biography isDarkMode={isDarkMode} />
       <Skill isDarkMode={isDarkMode} />
       <Featured isDarkMode={isDarkMode} />
+      <Footer isDarkMode={isDarkMode} />
     </div>
   );
 }
