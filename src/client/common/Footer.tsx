@@ -20,7 +20,9 @@ export default function Footer({ isDarkMode }: { isDarkMode: boolean }) {
         </a>
       </div>
       <div className="text-center">
-        <p>&copy; 2024 Nguyễn Minh Thuận. All rights reserved.</p>
+        <p className="text-sm text-gray-500">
+          &copy; 2024 Nguyễn Minh Thuận. All rights reserved.
+        </p>
       </div>
     </div>
   );

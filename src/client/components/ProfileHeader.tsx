@@ -21,7 +21,13 @@ const SocialIcon = ({ platform, size }: { platform: string; size: number }) => {
   return IconComponent ? <IconComponent size={size} /> : null;
 };
 
-export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
+export default function ProfileHeader({
+  isDarkMode,
+  onClick,
+}: {
+  isDarkMode: boolean;
+  onClick: any;
+}) {
   const [data, setData] = useState<HeaderData | null>(null);
 
   useEffect(() => {
@@ -136,6 +142,7 @@ export default function ProfileHeader({ isDarkMode }: { isDarkMode: boolean }) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg ${themeStyles.primaryButton} transition-colors duration-300 font-medium`}
+                  onClick={onClick}
                 >
                   <Lucide.Mail size={20} />
                   Liên hệ

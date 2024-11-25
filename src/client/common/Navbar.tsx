@@ -27,13 +27,15 @@ export default function Navbar({
     fetchNavbar();
   }, []);
   return (
-    <div className="fixed top-0 left-0 right-0 w-full z-50 shadow-md ">
-      <div className="flex justify-between w-[80%] mx-auto items-center p-4">
+    <div className="fixed top-0 left-0 right-0 w-full z-50 shadow-md bg-white dark:bg-gray-900 z-50">
+      <div className="flex lg:justify-evenly justify-between w-full lg:w-[80%] mx-auto items-center p-4">
         <h1 className="text-2xl font-bold">{data?.logo}</h1>
         <div>
-          <ul className="flex gap-4 text-lg justify-center items-center">
+          <ul className="flex  gap-4 text-lg justify-center items-center  ">
             {data?.menuItems.map((item) => (
-              <li key={item.name}>{item.name}</li>
+              <li key={item.name} className="hidden md:block">
+                {item.name}
+              </li>
             ))}
             <BtnDarkmode
               isDarkMode={isDarkMode}

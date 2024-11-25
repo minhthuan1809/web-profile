@@ -177,7 +177,7 @@ export default function Biography({ isDarkMode }: { isDarkMode: boolean }) {
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
                   <div
-                    className={`p-3 rounded-lg mt-1 ${
+                    className={`p-3 rounded-lg mt-1 hidden md:block ${
                       isDarkMode ? "bg-indigo-500/10" : "bg-indigo-50"
                     }`}
                   >
