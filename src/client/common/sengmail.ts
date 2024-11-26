@@ -23,7 +23,7 @@ export default function sendGmail(
       if (response.status === 200) {
         sendGmailServer(name, email, title, message).then(() => {
           toast.success("Gửi thành công!");
-          // onClick();
+          onClick();
         });
       } else {
         toast.error("Gửi thất bại!");
