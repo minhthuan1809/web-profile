@@ -16,7 +16,6 @@ export default function LayoutClient() {
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDarkMode);
     localStorage.setItem("isDarkMode", isDarkMode.toString());
-    console.log(isModalSenGmail);
   }, [isDarkMode]);
 
   return (
@@ -32,10 +31,7 @@ export default function LayoutClient() {
       <Featured isDarkMode={isDarkMode} />
       <Footer isDarkMode={isDarkMode} />
       {isModalSenGmail && (
-        <ModalSenGmail
-          isDarkMode={isDarkMode}
-          onClick={() => setIsModalSenGmail((prev) => !prev)}
-        />
+        <ModalSenGmail onClick={() => setIsModalSenGmail((prev) => !prev)} />
       )}
     </div>
   );

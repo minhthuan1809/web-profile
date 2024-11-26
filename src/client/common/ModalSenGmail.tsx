@@ -1,23 +1,17 @@
 import { useState } from "react";
 import sendGmail from "./sengmail";
 
-export default function ModalSenGmail({
-  isDarkMode,
-  onClick,
-}: {
-  isDarkMode: boolean;
-  onClick: any;
-}) {
+export default function ModalSenGmail({ onClick }: { onClick: () => void }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
-    const res = await sendGmail(name, email, title, message);
-    console.log(res);
+    sendGmail(name, email, title, message, onClick);
   };
+
   return (
     <div>
       <span className="fixed inset-0 bg-black/50 z-30"></span>
