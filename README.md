@@ -17,7 +17,7 @@ npm install @mui/material @emotion/react @emotion/styled
 ```
 
 ## Sử dụng
-1 toast
+### 1 : toast
 ```bash
   import React from 'react';
 
@@ -36,7 +36,7 @@ npm install @mui/material @emotion/react @emotion/styled
   }
 
 ```
-2 emailjs
+### 2 : emailjs
 ```bash
 var templateParams = {
   name: 'James',
@@ -52,7 +52,7 @@ emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams).then(
   },
 );
 ```
-3 darkmode Material UI 
+### 3 : darkmode Material UI 
 ```bash
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
