@@ -45,7 +45,7 @@ export default function Featured({ isDarkMode }: { isDarkMode: boolean }) {
                   {project.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {project.technologies.map((tech) => (
+                  {project.technologies.map((tech: any) => (
                     <span
                       key={tech}
                       className="px-2 py-1 bg-blue-100 text-blue-600 rounded-full text-sm"
