@@ -31,7 +31,21 @@ export async function sendGmailServer(
     body: JSON.stringify({ name, email, title, message }),
   });
   const data = await res.json();
-  console.log(data);
+
+  return data;
+}
+
+// skill
+export async function renderSkill() {
+  const res = await fetch(`${import.meta.env.VITE_API}/skill`);
+  const data = await res.json();
+  return data;
+}
+
+// projects
+export async function renderProjects() {
+  const res = await fetch(`${import.meta.env.VITE_API}/projects`);
+  const data = await res.json();
 
   return data;
 }

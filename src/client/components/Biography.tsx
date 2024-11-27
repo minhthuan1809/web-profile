@@ -45,7 +45,6 @@ export default function Biography({ isDarkMode }: { isDarkMode: boolean }) {
     const fetchData = async () => {
       const data = await renderBiography();
       setData(data);
-      console.log(data);
     };
     fetchData();
   }, []);

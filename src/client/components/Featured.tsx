@@ -1,38 +1,17 @@
 import { ExternalLink } from "lucide-react";
+import { renderProjects } from "../../service/render_api";
+import { useEffect, useState } from "react";
 
 export default function Featured({ isDarkMode }: { isDarkMode: boolean }) {
-  const projects = [
-    {
-      id: 3,
-      title: "Website Thương mại điện tử",
-      description:
-        "Xây dựng website bán hàng với đầy đủ tính năng như giỏ shàng, thanh toán, quản lý đơn hàng",
-      technologies: ["React", "Material UI", "Tailwind CSS", "Motion"],
-      image:
-        "https://scontent.xx.fbcdn.net/v/t1.15752-9/467483619_889401029927457_5064154946321850348_n.png?stp=dst-png_p526x395&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=bpYyUmwnMXcQ7kNvgH0VryG&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEUWcwozSnJVagePvcJPKS-XeZuzc6NNgPTwF7PHsRm7g&oe=6769D3C9",
-      link: "https://demo.minhthuan.site/",
-    },
-    {
-      id: 3,
-      title: "Website Thương mại điện tử",
-      description:
-        "Xây dựng website bán hàng với đầy đủ tính năng như giỏ shàng, thanh toán, quản lý đơn hàng",
-      technologies: ["React", "Material UI", "Tailwind CSS", "Motion"],
-      image:
-        "https://scontent.xx.fbcdn.net/v/t1.15752-9/467483619_889401029927457_5064154946321850348_n.png?stp=dst-png_p526x395&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=bpYyUmwnMXcQ7kNvgH0VryG&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEUWcwozSnJVagePvcJPKS-XeZuzc6NNgPTwF7PHsRm7g&oe=6769D3C9",
-      link: "https://demo.minhthuan.site/",
-    },
-    {
-      id: 3,
-      title: "Website Thương mại điện tử",
-      description:
-        "Xây dựng website bán hàng với đầy đủ tính năng như giỏ shàng, thanh toán, quản lý đơn hàng",
-      technologies: ["React", "Material UI", "Tailwind CSS", "Motion"],
-      image:
-        "https://scontent.xx.fbcdn.net/v/t1.15752-9/467483619_889401029927457_5064154946321850348_n.png?stp=dst-png_p526x395&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=bpYyUmwnMXcQ7kNvgH0VryG&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEUWcwozSnJVagePvcJPKS-XeZuzc6NNgPTwF7PHsRm7g&oe=6769D3C9",
-      link: "https://demo.minhthuan.site/",
-    },
-  ];
+  const [data, setData] = useState<any | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await renderProjects();
+      setData(data[0]);
+    };
+    fetchData();
+  }, []);
 
   return (
     <div
@@ -46,11 +25,11 @@ export default function Featured({ isDarkMode }: { isDarkMode: boolean }) {
         <h2
           className={`text-4xl m-8 font-bold text-center mb-12 bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent `}
         >
-          Dự án nổi bật
+          {data?.title}
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {data?.data?.map((project: any) => (
             <div
               key={project.id}
               className="flex flex-col h-full bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
