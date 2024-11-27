@@ -6,10 +6,13 @@ export default function ModalSenGmail({ onClick }: { onClick: () => void }) {
   const [email, setEmail] = useState("");
   const [title, setTitle] = useState("");
   const [message, setMessage] = useState("");
+  const [loadingBtn, setLoadingBtn] = useState(false);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    sendGmail(name, email, title, message, onClick);
+    setLoadingBtn(true);
+    sendGmail(name, email, title, message, onClick, setLoadingBtn);
+    console.log(loadingBtn);
   };
 
   return (
@@ -99,10 +102,11 @@ export default function ModalSenGmail({ onClick }: { onClick: () => void }) {
                 Hủy
               </button>
               <button
+                disabled={loadingBtn}
                 type="submit"
-                className="px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-md transition-colors"
+                className=" px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-md transition-colors"
               >
-                Gửi
+                {loadingBtn ? "Gửi..." : "Gửi"}
               </button>
             </div>
           </form>
