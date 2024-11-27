@@ -1,4 +1,4 @@
-# Web profile Dự án được viết từ react + typescript + ts 
+# Web profile Dự án được viết từ react + typescript + VITE 
 #demo
 ```https://web-profile-beige.vercel.app/```
 ## Cài đặt
