@@ -1,5 +1,6 @@
 import { useState } from "react";
 import sendGmail from "./sengmail";
+import { toast } from "react-toastify";
 
 export default function ModalSenGmail({ onClick }: { onClick: () => void }) {
   const [name, setName] = useState("");
@@ -10,9 +11,13 @@ export default function ModalSenGmail({ onClick }: { onClick: () => void }) {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    setLoadingBtn(true);
-    sendGmail(name, email, title, message, onClick, setLoadingBtn);
-    console.log(loadingBtn);
+    toast.dismiss();
+    if (name && email && title && message) {
+      setLoadingBtn(true);
+      sendGmail(name, email, title, message, onClick, setLoadingBtn);
+    } else {
+      toast.error("Vui lòng điền đẩy đủ thông tin!");
+    }
   };
 
   return (
