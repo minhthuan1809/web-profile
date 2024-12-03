@@ -11,7 +11,7 @@ export default function Skill({ isDarkMode }: { isDarkMode: boolean }) {
       setData(data);
     };
     fetchData();
-  }, []);
+  });
 
   const SkillIcon = ({
     icon,

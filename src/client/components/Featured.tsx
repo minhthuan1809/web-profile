@@ -11,7 +11,7 @@ export default function Featured({ isDarkMode }: { isDarkMode: boolean }) {
       setData(data[0]);
     };
     fetchData();
-  }, []);
+  });
 
   return (
     <div

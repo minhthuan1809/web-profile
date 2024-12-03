@@ -47,7 +47,7 @@ export default function Biography({ isDarkMode }: { isDarkMode: boolean }) {
       setData(data);
     };
     fetchData();
-  }, []);
+  });
 
   const SocialIcon = ({
     platform,

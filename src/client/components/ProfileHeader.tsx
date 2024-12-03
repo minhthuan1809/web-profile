@@ -36,7 +36,7 @@ export default function ProfileHeader({
       setData(data);
     };
     fetchHeader();
-  }, []);
+  });
 
   const themeStyles = {
     container: isDarkMode
