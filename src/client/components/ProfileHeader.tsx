@@ -24,9 +24,11 @@ const SocialIcon = ({ platform, size }: { platform: string; size: number }) => {
 export default function ProfileHeader({
   isDarkMode,
   onClick,
+  Loading,
 }: {
   isDarkMode: boolean;
   onClick: any;
+  Loading: any;
 }) {
   const [data, setData] = useState<HeaderData | null>(null);
 
@@ -34,6 +36,9 @@ export default function ProfileHeader({
     const fetchHeader = async () => {
       const data = await renderHeader();
       setData(data);
+      console.log(data);
+      
+      Loading(data);
     };
     fetchHeader();
   });
